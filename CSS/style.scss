@@ -1,0 +1,220 @@
+$totalHeigth : 100vh;
+$menuHeight : $totalHeigth/3;
+$mediaheight: ($totalHeigth/2)/3;
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* --- My photo --- */
+.photo{
+    width: 50%;
+    height: $totalHeigth;
+    background-image: url(../RES/aa.JPG);
+    background-size: cover;
+    position: relative;
+}
+.information{
+    width: 50%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    & > .social-media{
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 2%;
+        left: 1%;
+        opacity: 0.9;
+        & >a img{
+            width: 75%;
+            margin-bottom: 10%;
+            cursor: pointer;
+            transition: transform 1s ease;
+        }
+        & >a img:hover{
+            transform: rotate(360deg);
+        }
+    }
+    & > .my-name{
+        width: 100%;
+        height: fit-content;
+        margin-left: 2%;
+        & > h1{
+            font-size:18px;opacity:0.5;font-style:italic;font-weight:300;
+            color: #fff;
+            margin-left: 15%;
+            transform: rotate(345deg);
+        }
+    }
+}
+/* --- Menu Part --- */
+.menu{
+    width: 50%;
+    height: $totalHeigth;
+    & > .menu-set{
+        width: 100%;
+        height: $menuHeight;
+        transition: all 1s ease-out;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        cursor: pointer;
+    }
+    /* --- About-me Part --- */
+    & > .about{
+        background-image: url("../RES/about.jpg");
+        &:hover {
+            background-position: center;
+        }
+    }
+    /* --- My Works Part --- */
+    & > .my-work{
+        background-image: url("../RES/work.jpg");
+        &:hover {
+            background-position: center;
+        }
+    }
+    /* --- Contact Me Part --- */
+    & > .contact{
+        background-image: url("../RES/Contact-Me.jpg");
+        &:hover {
+            background-position: center ;
+        }
+    }
+}
+
+  .ml1 .letter , .ml2 .letter , .ml3 .letter  {
+    display: inline-block;
+  }
+/* --- Text style --- */
+.about-info , .mywork-info , .contact-info {
+    margin: 11% 0;
+    & > h2{color:#fff;margin:0;font-size:32px;opacity:0.9;}
+    & > h2 span{color:#00B796;}
+    & > h3{color:#fff;margin-top:5px;margin-bottom:0;font-size:20px;opacity:0.9;font-style:italic;font-weight:300;}
+}
+/* --- Mask Used --- */
+.mask{
+    width:100%;
+    height:100%;
+    opacity:0.8;
+    position:absolute;
+    top:0;
+    left:0;
+    background:#1a1b23;
+}
+.icon{
+    margin-top: 11.5%;
+    margin-right: 5%;
+    margin-left: 15%;
+    width: fit-content;
+    & > i{
+        background:rgba(256,256,256,0.2);
+        border-radius:30%;
+        color:#fff;
+        font-size:25px;
+        height:60px;
+        line-height:60px;
+        text-align:center;
+        box-shadow:0 0 0 0 rgba(256,256,256,0.2);
+        width:60px;
+        opacity:0.9;
+    }
+}
+
+#loading {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1b23;
+    background-image: url("../RES/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+/* --- Medium and small screen  --- */
+@media (max-width: 850px){
+    .photo{
+        width: 100%;
+        height: $totalHeigth/2;
+    }
+    .my-name{
+        width: 100%;
+        height: fit-content;
+        margin-left: 2%;
+        & > h1{
+            margin-top: 15px;
+        }
+    }
+
+    .menu{
+        width: 100%;
+        height: $totalHeigth/2;
+        & > .menu-set{
+            width: 100%;
+            height: $mediaheight;
+        }
+        & > .about ,  & > .contact{
+            background-position: center;
+            &:hover {
+                background-position: bottom;
+            }
+        }
+    }
+    .about-info , .mywork-info , .contact-info {
+        margin: 3% 0;
+        & > h2{font-size:30px;}
+        & > h3{font-size:18px;}
+    }
+    .icon{
+        margin-top: 3%;
+    }
+}
+/* --- very small screen  --- */
+@media (max-width: 450px){
+    .menu{
+        width: 100%;
+        height: $totalHeigth/2;
+        & > .menu-set{
+            width: 100%;
+            height: $mediaheight;
+        }
+        & > .about ,  & > .contact{
+            background-position: center;
+            &:hover {
+                background-position: bottom;
+            }
+        }
+    }
+    .about-info , .mywork-info , .contact-info {
+        margin: 5% 0;
+        & > h2{font-size:22px;}
+        & > h3{font-size:14px;margin-top:1px;}
+    }
+    .icon{
+        margin-top: 6%;
+        margin-right: 4%;
+        margin-left: 15%;
+        & > i{
+            font-size:20px;
+            height:40px;
+            line-height:40px;
+            width:40px;
+        }
+    }
+}

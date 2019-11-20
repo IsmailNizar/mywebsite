@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../RES/about.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
+
+/* ----- Mask used to change background to light color ----- */
+.mask {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #1a1b23; }
+
+/* ----- HEADER of the page ----- */
+header {
+  width: 100%;
+  height: 50px; }
+  header > a i {
+    color: #FFF;
+    opacity: 0.9;
+    float: right;
+    position: fixed;
+    top: 1%;
+    right: 1%; }
+
+/* ----- SECTION of the page ----- */
+section {
+  width: 100%; }
+
+.container {
+  width: 92%;
+  height: fit-content;
+  margin: 2% 4%; }
+  .container > h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 52px;
+    opacity: 0.9; }
+  .container > h2 span {
+    color: #00B796; }
+  .container > h3 {
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 21px;
+    opacity: 0.9;
+    font-style: italic;
+    font-weight: 300; }
+
+/* ----- Myworks styling ----- */
+.myworks {
+  width: 90%;
+  height: fit-content;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .myworks > .work {
+    width: 27%;
+    height: 200px;
+    opacity: 0.9;
+    border-bottom: #00B796 3px solid;
+    border-top: #00B796 3px solid;
+    border-radius: 15px;
+    margin: 2% 3%;
+    overflow: hidden;
+    position: relative; }
+    .myworks > .work > .work-img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      transition: transform 750ms ease-in-out;
+      transform-origin: left; }
+      .myworks > .work > .work-img > img {
+        width: 100%;
+        border-radius: 15px;
+        height: 100%; }
+    .myworks > .work:hover .work-img {
+      transform: translate(0, 100%); }
+    .myworks > .work > .work-info {
+      width: 100%;
+      height: 100%; }
+      .myworks > .work > .work-info > h2 {
+        text-align: center;
+        color: #fff;
+        margin: 2% 0;
+        font-size: 21px;
+        font-style: italic;
+        font-weight: 300; }
+      .myworks > .work > .work-info > .work-tech-used {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 2% 0; }
+        .myworks > .work > .work-info > .work-tech-used > span {
+          color: #fff;
+          margin: 2%;
+          font-size: 18px;
+          font-style: italic;
+          font-weight: 300;
+          background-color: #00B796;
+          padding: 7px;
+          border-radius: 10px; }
+      .myworks > .work > .work-info > .work-check {
+        text-decoration: none;
+        width: 70%;
+        height: 20%;
+        margin: 10% auto;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer; }
+        .myworks > .work > .work-info > .work-check > p {
+          color: #fff;
+          font-size: 18px;
+          font-style: italic;
+          font-weight: 300;
+          margin: 4% 2%; }
+        .myworks > .work > .work-info > .work-check > img {
+          width: 20%;
+          background-color: rgba(255, 255, 255, 0.123);
+          padding: 2%;
+          border-radius: 10%; }
+
+/* ----- loadong screen ----- */
+#loading {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1b23;
+  background-image: url("../RES/loading.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden; }
+
+/* ----- FOOTER of the page ----- */
+footer {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  background-color: #1a1b23be;
+  opacity: 0.9; }
+  footer > p {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 11px; }
+  footer > p span {
+    color: #00B796; }
+
+/* --- Medium and small screen  --- */
+@media (max-width: 1150px) {
+  .myworks > .work {
+    width: 40%;
+    margin: 2% 5%; } }
+@media (max-width: 800px) {
+  body {
+    height: fit-content; }
+
+  .myworks {
+    margin: 4% auto 20%; }
+    .myworks > .work {
+      width: 70%;
+      height: 160px;
+      margin: 2% 15%; }
+      .myworks > .work > .work-info > h2 {
+        margin: 5% 0 2%;
+        font-size: 20px; }
+      .myworks > .work > .work-info > .work-tech-used {
+        margin: 1% 0; }
+        .myworks > .work > .work-info > .work-tech-used > span {
+          margin: 2%;
+          font-size: 16px; }
+      .myworks > .work > .work-info > .work-check {
+        margin: 5% auto; }
+        .myworks > .work > .work-info > .work-check > p {
+          font-size: 16px;
+          margin: 4% 2%; } }
+@media (max-width: 450px) {
+  .container > h2 {
+    font-size: 40px; }
+  .container > h3 {
+    font-size: 18px; }
+
+  .myworks > .work {
+    height: 170px;
+    margin: 4% 15%; }
+    .myworks > .work > .work-info > h2 {
+      font-size: 18px; }
+    .myworks > .work > .work-info > .work-tech-used > span {
+      font-size: 13px;
+      padding: 4px; }
+    .myworks > .work > .work-info > .work-check {
+      margin: 5% auto; }
+      .myworks > .work > .work-info > .work-check > p {
+        font-size: 16px;
+        margin: 1% 2%; } }
+
+/*# sourceMappingURL=mywork.css.map */
