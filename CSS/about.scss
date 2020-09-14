@@ -4,6 +4,7 @@ $menuHeight : $totalHeigth/3;
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     position: absolute;
@@ -154,26 +155,54 @@ section{
     height: fit-content;
     & > h2{color:#fff;margin-top:5px;font-size:35px;opacity:0.9;font-style:italic;font-weight:300;line-height: 50px;}
     & > h2 span{color:#00B796;}
+    
 }
 .education {
-    width: 80%;    
-    margin: 2% auto;
-    opacity: 0.9;
-    line-height: 30px;
-    text-align: center;
-    & > ul li {
-        font-size: 1.6em;
-        margin-top: 10px;
-        color: #00B796;
-        list-style-position: inside;    
-    }& > ul li span {color: #fff;}
-    & > ul p{
-        font-size: 1em;
-        color: #fff;
-        font-style:italic;
-    }& > ul p span{color:#00B796;} 
+ width: 90%;
+ margin: 2% auto 15%;
+ height: 200px;
+ opacity: 0.9;
+ display: flex;
 }
+.edu-items{
+    width: 32%;
+    height: 200px;
+    margin-right: 2%;
+    & > .edu-item{
+        height: 200px;
+        & > .edu-item-img{
+            width: 40%;
+            height: 50%;
+            margin: 10% auto;
+            background-color: #00B796;
+            transform: rotate(20deg);
+            transition: transform 0.5s ;
+            transition: ease-in-out 0.5s;
+            display: FLEX;
+            & > img{
+                width: 60%;
+                margin: 10% 20%;
+                transition: ease-in-out 0.5s;
+            }
+        }
+        & > .edu-item-info{
+            margin-top: 20%;
+            
+            & > h2{color:#fff;font-size:25px;opacity:0.9;font-style:italic;font-weight:300;text-align: center;}
+            & > p{color:#fff;margin-top:10px;font-size:18px;opacity:0.9;font-style:italic;font-weight:100;line-height: 20px;}
+            & > h2 span, & > p span{color:#00B796;}
+        }
+        &:hover > .edu-item-img{
+            width: 50%;
+            margin: 0% auto;
+            transform: rotate(0deg);
+        }
+        &:hover > .edu-item-img img{
+            margin: 5% 20%;
+        }
 
+    }
+}
 #loading {
     display: block;
     position: fixed;
@@ -206,7 +235,84 @@ footer{
         color: #00B796;
     }
 }
-
+/* ----- Certificates container ----- */ 
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 80%;
+    margin: 0 10%;
+    opacity: 0.9;
+  }
+  
+  /* Slides */
+  .mySlides {
+    display: none;
+    padding: 80px;
+    text-align: center;
+    opacity: 0.9;
+    transition: ease-in-out 0.5s;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: #00B796;
+  }
+  
+  /* The dot/bullet/indicator container */
+  .dot-container {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.9;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Add a background color to the active dot/circle */
+  .active, .dot:hover {
+    background-color: #00B796;
+  }
+  
+  /* Add an italic font style to all quotes */
+  q {font-size: 35px;color: #fff;font-style:italic;font-weight:300;}
+  
+  /* Add a blue color to the author */
+  .author {
+        color:#fff;margin-top:10px;font-size:18px;opacity:0.9;font-style:italic;font-weight:100;line-height: 20px;
+        & > span{color:#00B796;}
+  }
 
 /* --- Medium and small screen  --- */
 @media (max-width: 1150px){
@@ -220,6 +326,9 @@ footer{
             & > p{font-size:20px;line-height: 50px;}
         }
     } 
+    .education {
+        margin: 2% auto 22%;
+       }
     $skills-width: 30vw;
     $skills-height: 9vw;
       .skills-container {
@@ -290,16 +399,23 @@ footer{
         margin: 4% 4% 20%;
     }
     .education {
-        width: 98%;    
-        margin: 2% auto;
-        & > ul li {
-            font-size: 1.3em;}    
-        & > ul p{
-            font-size:15px;
-            font-weight: 300px;
+        margin: 2% auto 140%;
+        flex-direction: column;
+    }
+    .edu-items{
+        width: 80%;
+        height: fit-content;
+        margin-left: 10%;
+        & > .edu-item{
+            height: fit-content;
+            & > .edu-item-img{
+                height: 25%;
+                margin: 10% auto;
+            }
         }
     }
 }
+
 /* --- very small screen  --- */
 @media (max-width: 450px){
     .information{
@@ -311,18 +427,7 @@ footer{
         & > h2{font-size:40px;}
         & > h3{font-size:18px;}
     }
-    .education {
-        width: 98%;    
-        margin: 2% auto;
-        & > ul li {
-            font-size: 20px;}    
-        & > ul p{
-            font-size:14px;
-            font-weight: 100px;
-            line-height: 26px;
-        }
-    }
-
+    
     .skills-container {
         .skills3d {
             .skills__flip { 
@@ -331,5 +436,17 @@ footer{
                 }
             }
         }
+    }
+    .slideshow-container {
+        width: 100%;
+        margin: 0 ;
+    }
+    /* Add an italic font style to all quotes */
+    q {font-size: 30px;}
+
+    /* Add a blue color to the author */
+    .author {font-size:16px;}
+    .education {
+        margin: 2% auto 190%;
     }
 }

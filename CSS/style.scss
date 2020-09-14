@@ -18,7 +18,7 @@ section{
 .photo{
     width: 50%;
     height: $totalHeigth;
-    background-image: url(../RES/aa.JPG);
+    background-image: url(../RES/aa.jpg);
     background-size: cover;
     position: relative;
 }
@@ -62,9 +62,10 @@ section{
 .menu{
     width: 50%;
     height: $totalHeigth;
-    & > .menu-set{
+    & > .menu-set, & > .menu-set > a{
         width: 100%;
         height: $menuHeight;
+        text-decoration: none;
         transition: all 1s ease-out;
         display: flex;
         flex-direction: row;
